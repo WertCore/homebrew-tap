@@ -16,6 +16,9 @@ defaults:
 jobs:
   test-bot:
     strategy:
+      # Otherwise one platform's failure cancels the other's run, and the log
+      # that would have said why is never written.
+      fail-fast: false
       matrix:
         os: [ macos-26 ]
         include:
