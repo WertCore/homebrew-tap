@@ -58,14 +58,20 @@ class Klart < Formula
     end
   end
 
-  service do
-    run [opt_bin/"klart-tray"]
-    run_type :immediate
-    # Deliberately not kept alive: "Quit klart" in the menu should mean quit,
-    # and a service that restarted it would make that item do nothing.
-    keep_alive false
-    log_path var/"log/klart-tray.log"
-    error_log_path var/"log/klart-tray.log"
+  # A plain conditional rather than `on_macos`, which does not accept a service
+  # block. There is no agent on Linux — it is AppKit and refuses to compile
+  # there — so defining one would point at a binary that does not exist, which
+  # is what the Linux audit says when it is defined unconditionally.
+  if OS.mac?
+    service do
+      run [opt_bin/"klart-tray"]
+      run_type :immediate
+      # Deliberately not kept alive: "Quit klart" in the menu should mean quit,
+      # and a service that restarted it would make that item do nothing.
+      keep_alive false
+      log_path var/"log/klart-tray.log"
+      error_log_path var/"log/klart-tray.log"
+    end
   end
 
   def caveats
