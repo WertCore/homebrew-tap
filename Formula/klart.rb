@@ -51,8 +51,12 @@ class Klart < Formula
       # The macOS archive is the application bundle, which is what the agent
       # needs when it is launched from Finder. Homebrew installs command line
       # programs, so only the two binaries inside it come across.
-      bin.install "Klart.app/Contents/MacOS/klart"
-      bin.install "Klart.app/Contents/MacOS/klart-tray"
+      #
+      # No `Klart.app/` prefix: an archive with a single top-level directory
+      # leaves Homebrew already inside it, so the working directory *is* the
+      # bundle.
+      bin.install "Contents/MacOS/klart"
+      bin.install "Contents/MacOS/klart-tray"
     else
       bin.install "klart"
     end
