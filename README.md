@@ -23,15 +23,27 @@ when the process that set it exits, so such a display returns to full brightness
 after every restart unless something is holding it. `klart list` marks those with
 a `*`.
 
-Built from source, which also means the binaries are yours rather than an
-unsigned download macOS would quarantine.
+This installs a released binary. Building from source would pull the whole Rust
+toolchain onto the machine as a build dependency and leave it there, which is a
+poor trade for a four-hundred-kilobyte program. If you would rather build it
+anyway:
+
+```sh
+brew install --HEAD wertcore/tap/klart
+```
+
+which is where the Rust dependency lives — asked for rather than imposed.
 
 ### What runs where
 
 | | |
 | --- | --- |
-| macOS | the agent and the command line, run on real hardware |
-| Linux | the command line; compiled and tested by CI, never yet run |
+| macOS | the agent and the command line, on Apple silicon, run on real hardware |
+| Linux | the command line, x86_64; compiled and tested by CI, never yet run |
+
+Intel Macs are not supported and not merely unbuilt: the registry walk that finds
+a monitor's name and its I2C channel matches a class they do not publish. aarch64
+Linux has no published build yet; `--HEAD` makes one.
 
 On Linux, external monitors want read and write on `/dev/i2c-*` — usually the
 `i2c` group or a udev rule — and the panel wants write access to
