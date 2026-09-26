@@ -27,8 +27,8 @@ class Klart < Formula
     depends_on arch: :arm64
 
     on_arm do
-      url "https://github.com/WertCore/klart/releases/download/v0.3.0/klart-0.3.0-macos-arm64.zip"
-      sha256 "947c3104067e1e99168cef5f880399cfbc44ec160a2f9f9ac47f8a34047dcc06"
+      url "https://github.com/WertCore/klart/releases/download/v0.4.0/klart-0.4.0-macos-arm64.zip"
+      sha256 "1c916cf638b46404d23318edcf4505422b2fb0299c2cbace2d1751e73f04342a"
     end
   end
 
@@ -37,8 +37,8 @@ class Klart < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/WertCore/klart/releases/download/v0.3.0/klart-0.3.0-linux-x86_64.tar.gz"
-      sha256 "70b3bf3cdc0609315e07b937059b984baf9eed6d3b5c219d99d4bb1af18b5f9b"
+      url "https://github.com/WertCore/klart/releases/download/v0.4.0/klart-0.4.0-linux-x86_64.tar.gz"
+      sha256 "4396ffb9d52e97abf9312bfaf3e0e1cf227bc90fa346f333b4917489d4f05fb2"
     end
   end
 
