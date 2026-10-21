@@ -1,7 +1,7 @@
 class Klart < Formula
   desc "Brightness for every display attached to the machine, built-in or not"
   homepage "https://github.com/WertCore/klart"
-  license any_of: ["MIT", "Apache-2.0"]
+  license "Apache-2.0"
 
   # Source builds are still available, through `--HEAD`. That is where the Rust
   # dependency belongs: asked for rather than imposed.
@@ -27,8 +27,8 @@ class Klart < Formula
     depends_on arch: :arm64
 
     on_arm do
-      url "https://github.com/WertCore/klart/releases/download/v0.4.1/klart-0.4.1-macos-arm64.zip"
-      sha256 "c8bca6966216f4a803d0b7c046f96338708a115fccd52bc3feabbbd644b0a56d"
+      url "https://github.com/WertCore/klart/releases/download/v0.5.0/klart-0.5.0-macos-arm64.zip"
+      sha256 "d49ef67186b0bb09952f872800ffb89e1842120fd428216587505aae59c4dc79"
     end
   end
 
@@ -37,8 +37,8 @@ class Klart < Formula
     depends_on arch: :x86_64
 
     on_intel do
-      url "https://github.com/WertCore/klart/releases/download/v0.4.1/klart-0.4.1-linux-x86_64.tar.gz"
-      sha256 "ecb4f340000279ad6b63955d2909432f41cd7cb1c8fd0cced9ae8cdb99c59fa4"
+      url "https://github.com/WertCore/klart/releases/download/v0.5.0/klart-0.5.0-linux-x86_64.tar.gz"
+      sha256 "9d797903fbbd61eed27b26c6d7dac04ab33b660184e09666591ff64fff157d97"
     end
   end
 
